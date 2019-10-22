@@ -5,6 +5,7 @@ En esta actividad nos dispondremos a configurar 2 sitios web (virtual hosts) en 
 Queremos que la URL de este sitio web sea `http://php.aluXXXX.me` y que en esa página se muestre la aplicación [demo_php.zip](https://github.com/sdelquin/claseando/blob/master/imw/UT1/assignments/assignment4/demo_php.zip).
 
 Para empezar, crearemos en el directorio *webapps* la carpeta **php**.
+
 ![mkdirphp](img/1.2crearcarpeta.png)
 
 ![lsweb](img/1.3ls.png)
@@ -33,7 +34,7 @@ Comprobamos que se ha descomprimido correctamente y borramos el zip descargado u
 
 ![borrarzip](img/6borrarzip.png)
 
-Para comprobar el resultado de este primer sitio web, debemos dirigirnos a `php.aluXXXX.me` y deberiamos ver esto:
+Para comprobar el resultado de este primer sitio web, recargamos el servicio *Nginx* usando el comando `sudo reload Nginx` y deberemos dirigirnos a `php.aluXXXX.me`. Deberiamos ver esto:
 
 ![resultado1](img/7resultado.png)
 
@@ -89,16 +90,48 @@ Ahora vamos a la carpeta `/etc/nginx/sites-available` y creamos el fichero que d
 
 ![nanoavail](img/g-nanoavailable.png)
 
-Lo enlazamos en la carpeta `etc/nginx/sites-enavb`
-![]()
-![]()
-![]()
-![]()
-![]()
-![]()
-![]()
-![]()
-![]()
-![]()
-![]()
-![]()
+Lo enlazamos en la carpeta `etc/nginx/sites-enabled`.
+
+![enlace](img/h-enlazar.png)
+
+Volvemos a ejecutar el comando *reload nginx* para que los cambios queden guardados.
+
+![reload](img/i-reload.png)
+
+Ahora vamos a crear un archivo de configuración del directorio **now** para el servicio `supervisor`.
+
+![visuper](img/i-visupervisor.png)
+
+![visuper2](img/j-visupervisor2.png)
+
+Reiniciamos el servicio *supervisor*:
+
+![restartsuper](img/k-restartsuper.png)
+
+Luego, en la carpeta *now*, creamos un fichero que llamaremos **run.sh** en el que introduciremos lo siguiente:
+
+![virun](img/l-virun.png)
+
+![dentrovirun](img/m-virun2.png)
+
+Y le damos permisos de ejecución al fichero.
+
+![chmod](img/n-permisosrun.png)
+
+Para comprobar los resultados finales, ejecutamos el comando `supervisorctl status` para asegurarnos de que está activo.
+
+![statussuper](img/ñ-superstatus.png)
+
+Podemos parar el servicio con `supervisorctl stop now`.
+
+![superctlstop](img/p-stop.png)
+
+Por lo que la página, si intetamos acceder a la página, saldrá esto:
+
+![resulstop](img/p-stop2.png)
+
+Y para finalizar, lo volvemos a iniciar (*supervisorctl restart now*).
+
+![restart](img/q-restart.png)
+
+![restart2](img/q-restart2.png)
