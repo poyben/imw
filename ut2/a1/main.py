@@ -2,8 +2,6 @@ import sys
 
 money = int(sys.argv[1])
 
-fifty, twenty, ten, five, two, one = 0, 0, 0, 0, 0, 0
-
 if money <= 0:
     print (sys.exit('Valor no válido. Por favor, introduzca otra cantidad.'))
 
