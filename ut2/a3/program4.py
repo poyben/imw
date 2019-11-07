@@ -2,8 +2,8 @@ import sys
 
 num = int(sys.argv[1])
 
-if num < 0:
-    sys.exit('Por favor, escriba dos valores positivos.')
+if num <= 0:
+    sys.exit('Por favor, escriba un valor positivo.')
 else:
     for i in range(1, num + 1):
         result = 1

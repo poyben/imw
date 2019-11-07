@@ -2,7 +2,7 @@ import sys
 
 num = int(sys.argv[1])
 
-if num < 0:
+if num <= 0:
     sys.exit('Por favor, introduzca un valor positivo.')
 
 else:
