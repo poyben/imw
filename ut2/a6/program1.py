@@ -3,12 +3,12 @@ import sys
 
 def count_words(sentence):
     summary = {}
-    word_docket = sentence.split()
-    for first_word in word_docket:
-        summary[first_word] = 0
-        for diff_word in word_docket:
-            if first_word == diff_word:
-                summary[first_word] += 1
+    docket = sentence.split()
+    for a_word in docket:
+        summary[a_word] = 0
+        for b_word in docket:
+            if a_word == b_word:
+                summary[a_word] += 1
     return summary
 
 
