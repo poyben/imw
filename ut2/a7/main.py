@@ -1,5 +1,3 @@
-import sys
-
 class VirtualMachine:
     def __init__(self, name, ram=1, cpu=1.3, hdd=100, os="debian"):
         self.name = name
