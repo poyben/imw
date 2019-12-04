@@ -31,8 +31,8 @@ class VirtualMachine:
         self.status = 2
 
     def reboot(self):
-        self.stop
-        self.start
+        self.stop()
+        self.start()
 
     def run(self, pid, ram, cpu, hdd):
         processes = {
@@ -79,7 +79,8 @@ if __name__ == '__main__':
     vm1.run(4,4,0.9,100)
     vm1.run(7,0.4,1.1,250)
     print(vm1)
-
+    vm1.reboot()
+    print(vm1)
 
 
     vm2 = VirtualMachine('Rohan', 6, 1.9, 250, 'Debian')
@@ -89,6 +90,8 @@ if __name__ == '__main__':
     vm2.run(2,0.6,0.7,50)
     vm2.run(5,2.1,0.2,75)
     vm2.run(8,2.5,0.4,30)
+    print(vm2)
+    vm2.reboot()
     print(vm2)
 
 
@@ -100,4 +103,6 @@ if __name__ == '__main__':
     vm3.run(3,2,1,25)
     vm3.run(6,0.3,0.5,12)
     vm3.run(9,1.4,0.8,65)
+    print(vm3)
+    vm3.reboot()
     print(vm3)
