@@ -1,0 +1,15 @@
+div.contenedor {width: 1300px; height: 600px;}
+
+div.azkaban {width: 500px; height: 400px; padding-left: 5px;}
+
+div.azkaban h2 {color: royalblue;}
+
+div.tabla_azkaban {padding-left: 32px;}
+
+div.launch_proc {float: left; padding-left: 330px;}
+
+div.boton {width: 150px;height: 40px;}
+
+div.launch_table {margin-top: 20px;}
+div.launch_table td.primero {background-color: royalblue; color: white;}
+div.launch_table td.segundo {background-color: white;}

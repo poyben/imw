@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Virtual Machine</title>
+    <link rel="stylesheet" type="text/css" href="../static/style.css"/>
+</head>
+<body>
+  <div class="contenedor" >
+     <div class="azkaban">
+
+        <h1>{{vmachine.name}}</h1>
+        <h2>{{vmachine.os}}</h2>
+
+    <div class="tabla_azkaban">
+   <table>
+
+   <tr>
+       <td width="240" height="30">{{vmachine.get_status()}}</td>
+       <td class="parar" width="50" height="30"><a href="/change_status/0">Parar</a> </td>
+       <td class="arrancar" width="50" height="30"><a href="/change_status/1">Arrancar</a> </td>
+       <td class="suspender"><a href="/change_status/2">Suspender</a></td>
+   </tr>
+   </table>
+   <br>
+   <table >
+       <tr>
+          <td></td>
+          <td width="150"><center>Total</center></td>
+          <td width="120"><center>% Usado</center></td>
+        </tr>
+
+        <tr>
+            <td height="40">RAM</td>
+            <td><center>{{vmachine.ram}} GB</center></td>
+            <td><center>{{ "%.2f"|format(vmachine.ram_usage())}} %</center></td>
+        </tr>
+
+         <tr>
+             <td height="40">CPU</td>
+             <td><center>{{vmachine.cpu}} GHZ</center></td>
+             <td><center>{{ "%.2f"|format(vmachine.cpu_usage())}} %</center></td>
+
+         </tr>
+
+         <tr>
+             <td height="40">HDD</td>
+             <td><center>{{vmachine.hdd}} GB</center></td>
+             <td><center>{{ "%.2f"|format(vmachine.hdd_usage())}} %</center></td>
+         </tr>
+   </table>
+    </div>
+   </div>
+
+   <br>
+
+
+      <div class="launch_proc">
+          <div class="boton">
+       <a href="/run_process">Lanzar proceso</a>
+       </div>
+       </div>
+       <br>
+
+       <div class="launch_table">
+        {% for proc in vmachine.get_processes() %}
+        <table border="1">
+        <br>
+          <tr>
+            <td width="500" height="30" class="primero">Proceso {{proc.pid}}</td>
+          </tr>
+          <tr>
+            <td width="500" height="30" class="segundo">RAM: {{proc.ram}} GB |
+              CPU: {{proc.cpu}}
+              GHZ | HDD: {{proc.hdd}} GB</td>
+          </tr>
+        </table>
+        {% endfor %}
+   </div>
+</div>
+</body>
+</html>
