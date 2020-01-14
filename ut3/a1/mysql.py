@@ -28,4 +28,4 @@ class DB():
         with self.connection.cursor() as cursor:
             cursor.execute(sql)
             if sql.startswith('select'):
-return cursor.fetchall()
+                return cursor.fetchall()
