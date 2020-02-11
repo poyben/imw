@@ -9,6 +9,7 @@ fabric3 = "*"
 [packages]
 flask = "*"
 pymysql = "*"
+mysql = "*"
 
 [requires]
 python_version = "3.7"
