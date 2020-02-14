@@ -4,6 +4,9 @@
         <meta charset="utf-8">
         <title>Tabla</title>
     </head>
+    <style>
+    table td {width: 50px; height: 50px}
+    </style>
     <body>
       <form action="index.php" method="post">
         <p>Introduzca el número de columnas: <input type="text" name="columnas"/></p>
@@ -23,10 +26,10 @@
             echo ("<p>$filas filas y $columnas columnas.</p>");
             while ($n_filas <= $filas) {
               $n_filas++;
-            
+
               while ($n_columnas <= $columnas) {
                 $n_columnas++;
-                echo ("<td>Casilla</td>");
+            echo ("<td></td>");
               }
               $n_columnas = 1;
               echo ("</tr>");
